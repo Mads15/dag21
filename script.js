@@ -1,5 +1,7 @@
-// [] er array
-// {} er object
+/*
+[] er array
+{} er object
+*/
 
 const myAPI = [
     {frukt: "Epple", godt: "ja"},
@@ -17,3 +19,11 @@ const KatteFakta = [
 ];
 
 console.log(KatteFakta[1].Fakta);
+
+async function KatteFaktaGenerator() {
+    const response = await fetch("https://catfact.ninja/facts");
+    const KatteFaktaData = await response.json();
+    console.log(KatteFaktaData.data[0].fact);
+};
+
+KatteFaktaGenerator()
